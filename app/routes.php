@@ -10,8 +10,15 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::get('/', 'UserController@index');
+Route::get('login', 'UserController@index');
+Route::post('login', 'UserController@login');
+Route::get('registro', 'UserController@create');
+Route::post('registro', 'UserController@store');
+Route::get('logout', 'UserController@logout');
+Route::get('auth', 'UserController@isLogged');
 
-Route::get('/', function()
-{
-	return View::make('hello');
+
+Route::group(array('before' => 'auth'), function () {
+	Route::get('tareas', 'TaskController@index');
 });
