@@ -8,5 +8,7 @@
 	{{ Form::password('password', array('placeholder' => 'Contraseña', 'class' => 'form-control', 'required' => 'true')) }}
 	<br>
 	{{ Form::submit('Login', array())}}
-	{{ Form::button('Registrarse', array('url' => 'registro')) }}
 {{ Form::close() }}
+		{{ Form::open(array('url' => 'registro', 'method' => 'GET')) }}
+			{{ Form::submit('Registrarse', array())}}
+		{{ Form::close() }}

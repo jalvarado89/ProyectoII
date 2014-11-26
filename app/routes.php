@@ -18,7 +18,9 @@ Route::post('registro', 'UserController@store');
 Route::get('logout', 'UserController@logout');
 Route::get('auth', 'UserController@isLogged');
 
-
 Route::group(array('before' => 'auth'), function () {
 	Route::get('tareas', 'TaskController@index');
 });
+
+Route::get('nueva', 'TaskController@create');
+Route::post('crear', 'TaskController@store');

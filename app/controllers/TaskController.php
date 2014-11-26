@@ -5,32 +5,43 @@ class TaskController extends \BaseController {
 
 	public function index()
 	{
-		//$Tasks = Task::all();
+		$userid = Auth::user()->id;
+		$tasks = tasks::where('usuarioid' , '=' , $userid)->get();
+		//return Response::Json($tasks);
 		$this->layout->titulo = 'Tareas';
-		$this->layout->nest('content', 'Task.index');
-		//$this->layout->nest(
-			//'content',
-			//'pilotos.index',
-			//array(
-				//'pilotos' => $pilotos
-			//)
-		//);
+		//$this->layout->nest('content', 'Task.index');
+		$this->layout->nest(
+			'content',
+			'Task.index',
+			array(
+				'tasks' => $tasks
+			)
+		);
 
-		//return Response::Json($aviones);
+		
 	}
 
 
 
 	public function create()
 	{
-		//
+		$this->layout->titulo = 'New Task';
+		$this->layout->nest('content', 'Task.create');
 	}
 
 
 
 	public function store()
 	{
-		//
+		$name = Input::get('name');
+		$userid = Auth::user()->id;
+
+		$Task = new tasks();
+		$Task->nombre = $name;
+		$Task->estado = 1;
+		$Task->usuarioid = $userid;
+		$Task->save();
+		return Redirect::to('tareas');
 	}
 
 

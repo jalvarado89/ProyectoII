@@ -6,8 +6,7 @@
 <body>
 	<?php
 		if (Auth::check()) {
-			echo "<a href='logout'>Cerrar Session</a>";
-			echo "<h3>Usuario Logueado</h3>";
+			echo "<h3> <a href='logout'>Cerrar Session</a> User:".Auth::user()->username." </h3>";
 		}
 	?>
 	{{ $content }}
