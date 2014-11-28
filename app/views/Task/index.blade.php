@@ -14,8 +14,8 @@
         	<td>{{ $task->estado }}</td>
         	<td>{{ $task->usuarioid }}</td>
         	<td>
-        		{{link_to("aviones/$avion->id/edit", 'Editar', $attributes = array(), $secure = null);}}
-        		{{link_to("aviones/$avion->id/delete", 'Eliminar', $attributes = array(), $secure = null);}}
+        		{{link_to("tasks/$task->id/edit", 'Editar', $attributes = array(), $secure = null);}}
+        		{{link_to("tasks/$task->id/delete", 'Eliminar', $attributes = array(), $secure = null);}}
         	</td>	
         </tr>
     @endforeach

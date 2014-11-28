@@ -46,30 +46,40 @@ class TaskController extends \BaseController {
 
 
 
-	public function show($id)
-	{
-		//
-	}
-
-
-
 	public function edit($id)
 	{
-		//
+		$tasks = tasks::find($id);
+		//return Response::Json($tasks);
+		$this->layout->titulo = 'Update Task';
+		$this->layout->nest(
+			'content',
+			'Task.update',
+			array(
+				'tasks' => $tasks
+			)
+		);
 	}
 
 
 
 	public function update($id)
 	{
-		//
+		$name = Input::get('Name');
+
+		$Task = tasks::find($id);
+		$Task->nombre = $name;
+		$Task->save();
+		return Redirect::to('tareas');
 	}
 
 
 	
 	public function destroy($id)
 	{
-		//
+		$tarea = tasks::find($id);
+		return Response::Json($tarea);
+		$tarea->delete();
+		return Redirect::to('tareas');
 	}
 
 

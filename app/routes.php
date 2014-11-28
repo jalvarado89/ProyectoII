@@ -22,5 +22,9 @@ Route::group(array('before' => 'auth'), function () {
 	Route::get('tareas', 'TaskController@index');
 });
 
+Route::resource('tasks', 'TaskController');
 Route::get('nueva', 'TaskController@create');
 Route::post('crear', 'TaskController@store');
+Route::get('tasks/{id}/edit', 'TaskController@edit');
+Route::post('tasks/{id}/update', 'TaskController@update');
+Route::post('tasks/{id}/delete', 'TaskController@destroy');

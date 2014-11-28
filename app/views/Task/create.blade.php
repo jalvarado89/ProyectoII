@@ -3,6 +3,6 @@
 {{ Form::open(array('url' => 'crear')) }}
 	
 	<label for="name">Name:</label>
-	{{Form::text('name', array('placeholder' => 'Name', 'required' => 'true'))}}	
-	{{ Form::submit('Login', array())}}
+	{{Form::text('name', '' ,array('placeholder' => 'Name', 'required' => 'true'))}}	
+	{{ Form::submit('Create', array())}}
 {{ Form::close() }}
