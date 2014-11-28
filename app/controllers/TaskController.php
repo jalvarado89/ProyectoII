@@ -77,7 +77,7 @@ class TaskController extends \BaseController {
 	public function destroy($id)
 	{
 		$tarea = tasks::find($id);
-		return Response::Json($tarea);
+		//return Response::Json($tarea);
 		$tarea->delete();
 		return Redirect::to('tareas');
 	}

@@ -20,3 +20,14 @@
         </tr>
     @endforeach
 </table>
+
+<div>
+    <ul id="sortable">
+        @foreach ($tasks as $rs)
+            <li id="<?php echo $rs['nombre']; ?>">
+                <span></span>            
+                <div><h2><?php echo $rs['id']; ?></h2><h2><?php echo $rs['estado']; ?></h2></div>
+            </li>
+         @endforeach
+    </ul>
+</div><!-- content --> 
