@@ -33,13 +33,17 @@ class TaskController extends \BaseController {
 
 	public function store()
 	{
-		$name = Input::get('name');
+		$titulo = Input::get('titulo');
+		$prioridad = Input::get('prioridad');
+		$descripcion = Input::get('descripcion');
 		$userid = Auth::user()->id;
 
 		$Task = new tasks();
-		$Task->nombre = $name;
-		$Task->estado = 1;
+		$Task->titulo = $titulo;
+		$Task->prioridad = $prioridad;
+		$Task->descripcion = $descripcion;
 		$Task->usuarioid = $userid;
+		//return Response::Json($Task);
 		$Task->save();
 		return Redirect::to('tareas');
 	}

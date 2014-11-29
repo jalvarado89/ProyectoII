@@ -2,7 +2,14 @@
 
 {{ Form::open(array('url' => 'crear')) }}
 	
-	<label for="name">Name:</label>
-	{{Form::text('name', '' ,array('placeholder' => 'Name', 'required' => 'true'))}}	
+	<label for="titulo">Titulo:</label>
+	{{Form::text('titulo', '' ,array('placeholder' => 'Titulo', 'required' => 'true'))}}
+	<label for="prioridad">Prioridad:</label>
+	{{ Form::select('prioridad', ['', 'Nueva', 'En Proceso', 'Terminada', 'Verificada'], 0) }}
+	<br>
+	<label for="descripcion">Descripcion:</label>
+	<br>
+	{{Form::textarea('descripcion', '' ,array('placeholder' => 'Descripcion', 'required' => 'true'))}}
+	<br>
 	{{ Form::submit('Create', array())}}
 {{ Form::close() }}

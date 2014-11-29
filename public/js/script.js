@@ -5,6 +5,7 @@
 * Subject : Dynamic Drag and Drop with jQuery and PHP
 */
 
+
 $(function() {
     $('#sortable').sortable({
         axis: 'y',

@@ -3,15 +3,17 @@
 <table>
 	<tr>
 		<th>Id</th>
-		<th>Nombre</th>
-		<th>Estado</th>
-		<th>userid</th>
+		<th>Titulo</th>
+		<th>Prioridad</th>
+        <th>Descripcion</th>
+		<th>Userid</th>
 	</tr>
 	@foreach($tasks as $task)
         <tr>
         	<td>{{ $task->id }}</td>	
-        	<td>{{ $task->nombre }}</td>	
-        	<td>{{ $task->estado }}</td>
+        	<td>{{ $task->titulo }}</td>	
+        	<td>{{ $task->prioridad }}</td>
+            <td>{{ $task->descripcion }}</td>
         	<td>{{ $task->usuarioid }}</td>
         	<td>
         		{{link_to("tasks/$task->id/edit", 'Editar', $attributes = array(), $secure = null);}}
@@ -20,14 +22,29 @@
         </tr>
     @endforeach
 </table>
-
-<div>
+<div id="combinar">
+    <div class="container">
     <ul id="sortable">
+    <h2>Nueva</h2>
         @foreach ($tasks as $rs)
-            <li id="<?php echo $rs['nombre']; ?>">
+            <li id="<?php echo $rs['id']; ?>">
                 <span></span>            
-                <div><h2><?php echo $rs['id']; ?></h2><h2><?php echo $rs['estado']; ?></h2></div>
+                <div><h2><?php echo $rs['nombre']; ?></h2><h2><?php echo $rs['estado']; ?></h2></div>
             </li>
          @endforeach
     </ul>
-</div><!-- content --> 
+    </div>
+
+    <div class="container">
+    <ul id="sortable">
+    <h2>En Proceso</h2>
+        @foreach ($tasks as $rs)
+            <li id="<?php echo $rs['id']; ?>">
+                <span></span>            
+                <div><h2><?php echo $rs['nombre']; ?></h2><h2><?php echo $rs['estado']; ?></h2></div>
+            </li>
+         @endforeach
+    </ul>
+</div>
+
+</div>
