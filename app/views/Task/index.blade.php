@@ -22,29 +22,18 @@
         </tr>
     @endforeach
 </table>
-<div id="combinar">
-    <div class="container">
-    <ul id="sortable">
-    <h2>Nueva</h2>
-        @foreach ($tasks as $rs)
-            <li id="<?php echo $rs['id']; ?>">
-                <span></span>            
-                <div><h2><?php echo $rs['nombre']; ?></h2><h2><?php echo $rs['estado']; ?></h2></div>
-            </li>
-         @endforeach
-    </ul>
+    <div class="content">
+        <div id="content1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Nueva</h2>
+        </div> 
+        <div id="content2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>En Proceso</h2>
+        </div>
+        <div id="content3" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Terminada</h2>
+        </div> 
+        <div id="content4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Verificada</h2>
+        </div> 
     </div>
-
-    <div class="container">
-    <ul id="sortable">
-    <h2>En Proceso</h2>
-        @foreach ($tasks as $rs)
-            <li id="<?php echo $rs['id']; ?>">
-                <span></span>            
-                <div><h2><?php echo $rs['nombre']; ?></h2><h2><?php echo $rs['estado']; ?></h2></div>
-            </li>
-         @endforeach
-    </ul>
-</div>
-
-</div>
+            

@@ -21,7 +21,15 @@ class TaskController extends \BaseController {
 		
 	}
 
-
+	public function SelectAll()
+	{
+		if (Request::ajax())
+		{
+    		$userid = Auth::user()->id;
+			$tasks = tasks::where('usuarioid' , '=' , $userid)->get();
+    		return Response::json($tasks);
+		}
+	}
 
 	public function create()
 	{
@@ -68,10 +76,14 @@ class TaskController extends \BaseController {
 
 	public function update($id)
 	{
-		$name = Input::get('Name');
+		$titulo = Input::get('titulo');
+		$prioridad = Input::get('prioridad');
+		$descripcion = Input::get('descripcion');
 
 		$Task = tasks::find($id);
-		$Task->nombre = $name;
+		$Task->titulo = $titulo;
+		$Task->prioridad = $prioridad;
+		$Task->descripcion = $descripcion;
 		$Task->save();
 		return Redirect::to('tareas');
 	}

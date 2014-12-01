@@ -28,3 +28,5 @@ Route::post('crear', 'TaskController@store');
 Route::get('tasks/{id}/edit', 'TaskController@edit');
 Route::post('tasks/{id}/update', 'TaskController@update');
 Route::get('tasks/{id}/delete', 'TaskController@destroy');
+
+Route::get('selectall', 'TaskController@SelectAll');

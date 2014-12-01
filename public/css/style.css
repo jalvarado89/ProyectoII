@@ -1,71 +1,38 @@
-/*
-* Author : Ali Aboussebaba
-* Email : bewebdeveloper@gmail.com
-* Website : http://www.bewebdeveloper.com
-* Subject : Dynamic Drag and Drop with jQuery and PHP
-*/
-/*
-* {
-	margin: 0;
-	padding: 0;
-}
-body {
-	padding: 10px;
-	background: #eaeaea;
-	text-align: center;
-	font-family: arial;
-	font-size: 12px;
-	color: #333333;
-}
-
-.header {
-	padding: 10px;
-}
-.main_title {
-	background: #cccccc;
-	color: #ffffff;
-	padding: 10px;
-	font-size: 20px;
-	line-height: 20px;
-}
-.content {
+/* Sortable ******************/
+#content1, #content2, #content3, #content4{
+	width: 200px;
+	height: auto;
+	background: #6E6E6E;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: auto;
 	padding: 10px;
 	min-height: 100px;
 	text-align: center;
+	float: left;
+	display: block;
 }
-.footer {
-	padding: 10px;
-	text-align: right;
-}
-.footer a {
-	color: #999999;
-	text-decoration: none;
-}
-.footer a:hover {
-	text-decoration: underline;
-}*/
-/* Sortable ******************/
-#sortable { 
-	background-color: #6F92C0;
+#sortable1, #sortable2, #sortable3, #sortable4 {
+    background-color: #6F92C0;
 	list-style: none;
 	margin: 0;
 	min-height: 60px;
 	padding: 10px;
 	text-align: left;
-}
-#sortable li { 
-	background-color: #BCCDE4;
+  }
+  #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li {
+    background-color: #BCCDE4;
 	border: 1px solid #999999;
-	cursor: move;
 	display: block;
 	font-weight: bold;
 	margin-bottom: 5px;
 	padding: 8px 0 0;
 	text-align: center;
 	border-radius: 5px;
-}
-#sortable li span {
-	background-color: #FFFFFF;
+  }
+  
+  #sortable1 li span, #sortable2 li span, #sortable3 li span, #sortable4 li span {
+    background-color: #FFFFFF;
 	background-image: url('../images/arrow.png');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -74,23 +41,20 @@ body {
 	display: inline-block;
 	float: left;
 	cursor: move;
-}
+  }
 
-#sortable li div {
-	padding: 5px;
-}
-#sortable li h2 {    
-	font-size: 16px;
+  #sortable1 li div, #sortable2 li div, #sortable3 li div, #sortable4 li div {
+    padding: 5px;
+  }
+
+  #sortable1 li h2, #sortable2 li h2, #sortable3 li h2, #sortable4 li h2 {
+    font-size: 16px;
     line-height: 20px;
-}
-.container {
-	width: 200px;
-	height: auto;
-	background: #6E6E6E;
-	border: 1px solid #cccccc;
-	border-radius: 10px;
-	margin: auto;
-	text-align: left;
+  }
+
+  #sortable1 li img, #sortable2 li img, #sortable3 li img, #sortable4 li img {
+	height: 65px;
+	border: 5px solid #cccccc;
+	display: inline-block;
 	float: left;
 }
-
