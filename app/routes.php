@@ -30,3 +30,4 @@ Route::post('tasks/{id}/update', 'TaskController@update');
 Route::get('tasks/{id}/delete', 'TaskController@destroy');
 
 Route::get('selectall', 'TaskController@SelectAll');
+Route::post('redibujar', 'TaskController@Redibujar');

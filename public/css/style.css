@@ -1,5 +1,5 @@
 /* Sortable ******************/
-#content1, #content2, #content3, #content4{
+.contenido{
 	width: 200px;
 	height: auto;
 	background: #6E6E6E;
@@ -12,6 +12,11 @@
 	float: left;
 	display: block;
 }
+#content1, #content2, #content3, #content4{
+		background-color: #6F92C0;
+		height: auto;
+		min-height: 50px;
+}
 #sortable1, #sortable2, #sortable3, #sortable4 {
     background-color: #6F92C0;
 	list-style: none;
@@ -19,6 +24,7 @@
 	min-height: 60px;
 	padding: 10px;
 	text-align: left;
+	cursor: move;
   }
   #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li {
     background-color: #BCCDE4;
@@ -30,31 +36,11 @@
 	text-align: center;
 	border-radius: 5px;
   }
-  
-  #sortable1 li span, #sortable2 li span, #sortable3 li span, #sortable4 li span {
-    background-color: #FFFFFF;
-	background-image: url('../images/arrow.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 20px;
-	height: 20px; 
-	display: inline-block;
-	float: left;
-	cursor: move;
-  }
-
-  #sortable1 li div, #sortable2 li div, #sortable3 li div, #sortable4 li div {
-    padding: 5px;
+  #sortable1 li p, #sortable2 li p, #sortable3 li p, #sortable4 li p {
+    visibility: hidden;
   }
 
   #sortable1 li h2, #sortable2 li h2, #sortable3 li h2, #sortable4 li h2 {
     font-size: 16px;
     line-height: 20px;
   }
-
-  #sortable1 li img, #sortable2 li img, #sortable3 li img, #sortable4 li img {
-	height: 65px;
-	border: 5px solid #cccccc;
-	display: inline-block;
-	float: left;
-}

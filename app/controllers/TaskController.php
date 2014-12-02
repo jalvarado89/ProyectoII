@@ -21,6 +21,20 @@ class TaskController extends \BaseController {
 		
 	}
 
+	public function Redibujar()
+	{
+		if (Request::ajax())
+		{
+			$id = Input::get('id');
+			$prioridad = Input::get('prioridad');
+
+			$tasks = tasks::find($id);
+			$tasks->prioridad = $prioridad;
+			$tasks->save;
+			return Response::json($tasks);    		
+		}
+	}
+
 	public function SelectAll()
 	{
 		if (Request::ajax())
